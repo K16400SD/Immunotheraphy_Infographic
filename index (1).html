@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Immunotherapy: An Infographic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#0B3D2E;--mint:#7CF2B0;--green:#12C26B;--red:#E5173F;--deep:#7A0A22;--paper:#F3F7F4;--ink:#0A0F0D}
+*{box-sizing:border-box;margin:0;border-radius:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:17px/1.55 "IBM Plex Sans",sans-serif;background-image:linear-gradient(#0b3d2e12 1px,transparent 1px),linear-gradient(90deg,#0b3d2e12 1px,transparent 1px);background-size:48px 48px;overflow-x:hidden}
+h1,h2,h3{font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:.95}
+h2{font-size:clamp(2.6rem,7vw,5.5rem);color:var(--forest)}
+.m{font:600 12px/1.3 "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
+a{color:inherit}a:focus-visible,button:focus-visible{outline:4px solid var(--red);outline-offset:3px}
+section{position:relative;padding:clamp(4rem,9vw,8rem) 6vw}
+.src{display:inline-block;margin-top:1.2rem;padding:.25rem .6rem;background:var(--ink);color:var(--mint)}
+nav{position:fixed;right:0;top:30%;z-index:20;display:flex;flex-direction:column;background:var(--ink)}
+nav a{color:var(--mint);text-decoration:none;padding:.5rem .7rem;border-bottom:1px solid #12c26b55}
+nav a:hover{background:var(--red);color:#fff}
+/* HERO: liquid glass bubble */
+.hero{min-height:100vh;display:grid;align-items:center;background:radial-gradient(120% 90% at 85% 10%,#7cf2b055,transparent 55%),var(--forest);color:#fff;overflow:hidden}
+.cells{position:absolute;inset:0;width:100%;height:100%}
+.cells .im{animation:drift 9s ease-in-out infinite alternate}
+.cells .im:nth-child(2){animation-delay:-3s}.cells .im:nth-child(3){animation-delay:-6s}
+@keyframes drift{to{transform:translate(60px,-30px) rotate(25deg)}}
+.bubble{position:relative;z-index:2;width:min(780px,92%);margin-left:4vw;padding:clamp(2.5rem,7vw,5rem) clamp(2rem,6vw,5rem);border-radius:46% 54% 50% 50%/58% 42% 58% 42%;background:linear-gradient(145deg,#ffffff55,#ffffff12 40%,#7cf2b022);border:1.5px solid #ffffff99;backdrop-filter:blur(18px) saturate(1.6);-webkit-backdrop-filter:blur(18px) saturate(1.6);box-shadow:inset 12px 14px 30px #ffffff55,inset -16px -20px 40px #0b3d2e66,0 40px 80px #00000066}
+.bubble::before{content:"";position:absolute;top:9%;left:14%;width:26%;height:10%;background:#fff;opacity:.5;filter:blur(8px);transform:rotate(-24deg)}
+.bubble h1{font-size:clamp(3.2rem,12vw,9rem);color:#fff;text-shadow:0 4px 0 var(--deep)}
+.bubble p{font-size:1.25rem;max-width:26ch;margin-top:1rem}
+.ecg{position:absolute;bottom:6%;left:0;width:100%;height:90px;z-index:1}
+.ecg path{stroke-dasharray:1400;stroke-dashoffset:1400;animation:ecg 4s linear infinite}
+@keyframes ecg{to{stroke-dashoffset:0}}
+.tag{position:absolute;right:5vw;bottom:14%;z-index:2;transform:rotate(90deg);transform-origin:right bottom;color:var(--mint)}
+/* S1 brutalist clipboard */
+.s1{display:grid;grid-template-columns:1fr 2fr;gap:2rem}
+.clip{grid-column:2;transform:rotate(-1.6deg);background:#fff;border:3px solid var(--ink);box-shadow:14px 14px 0 var(--green);padding:3.2rem 2.2rem 2.2rem;position:relative;clip-path:polygon(0 0,100% 0,100% calc(100% - 28px),calc(100% - 28px) 100%,0 100%)}
+.clip::before{content:"";position:absolute;top:-3px;left:50%;width:150px;height:34px;margin-left:-75px;background:linear-gradient(#e8ece9,#9aa39e);border:3px solid var(--ink);border-top:0}
+.clip q{display:block;font:400 clamp(1.5rem,3.4vw,2.6rem)/1.15 Anton,sans-serif;text-transform:uppercase;quotes:none}
+.s1 .m{grid-column:1;grid-row:1;writing-mode:vertical-rl;color:var(--red)}
+/* S2 diagram */
+.s2{background:var(--ink);color:#fff}.s2 h2{color:var(--mint)}
+.s2 .lead{max-width:60ch;margin:1.5rem 0 2rem 12vw}
+.dia{width:min(900px,100%);margin-left:auto;display:block;border:3px solid var(--mint);background:#0b3d2e}
+.evade{display:flex;flex-wrap:wrap;gap:0;margin-top:3rem}
+.evade div{flex:1 1 240px;padding:1.4rem 1.2rem;background:repeating-linear-gradient(-45deg,var(--red) 0 12px,var(--deep) 12px 24px);color:#fff;position:relative}
+.evade div:nth-child(2){margin-top:2.5rem}.evade div:nth-child(3){margin-top:1rem}
+.evade p{background:var(--ink);padding:.8rem;margin-top:.6rem}
+/* S3 types */
+.types{display:flex;flex-direction:column;gap:2.4rem;margin-top:3rem}
+.t{max-width:620px;padding:1.6rem;position:relative}
+.t h3{font-size:2.2rem;margin:.4rem 0 .6rem}
+.t:nth-child(odd){align-self:flex-start}.t:nth-child(even){align-self:flex-end}
+.t1{background:#fff;border:3px solid var(--ink);box-shadow:10px 10px 0 var(--red)}
+.t2{background:linear-gradient(135deg,#ffffffaa,#7cf2b055);backdrop-filter:blur(14px);border:1px solid #fff;box-shadow:0 20px 40px #0b3d2e44,inset 0 0 0 1px #12c26b}
+.t3{background:var(--forest);color:#fff;clip-path:polygon(0 0,calc(100% - 36px) 0,100% 36px,100% 100%,0 100%)}
+.t4{background:#e9f1ec;box-shadow:12px 12px 24px #b7c4bc,-12px -12px 24px #fff,inset 2px 2px 6px #fff}
+.t5{border-left:10px solid var(--red);padding-left:1.6rem;background:transparent}
+/* S5 explorer */
+.s5{background:linear-gradient(160deg,var(--forest),#04180f);color:#fff}.s5 h2{color:var(--mint)}
+.ex{display:grid;grid-template-columns:minmax(220px,1fr) 1.6fr;gap:0;margin-top:2.5rem;align-items:start}
+.list{display:flex;flex-direction:column;border:3px solid var(--mint);max-height:520px;overflow:auto;background:#04180f}
+.list button{all:unset;cursor:pointer;display:flex;justify-content:space-between;gap:.5rem;padding:.7rem 1rem;border-bottom:1px solid #12c26b55;font:600 14px "IBM Plex Mono",monospace}
+.list button:hover,.list button[aria-pressed=true]{background:var(--mint);color:var(--ink)}
+.list i{width:14px;height:14px;flex:none;margin-top:3px;display:block}
+.W{background:var(--green)}.S{background:linear-gradient(90deg,var(--green) 50%,var(--red) 50%)}.T{background:var(--red)}
+.panel{margin:3rem 0 0 -2rem;padding:2rem;background:linear-gradient(135deg,#ffffff33,#ffffff0d);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid #ffffff88;box-shadow:inset 0 0 40px #7cf2b022,0 30px 60px #0008;min-height:260px;clip-path:polygon(0 0,100% 0,100% 100%,40px 100%,0 calc(100% - 40px))}
+.panel h3{font-size:3rem;color:var(--mint)}
+.badge{display:inline-block;margin:.8rem 0;padding:.3rem .7rem;color:#fff;border:2px solid #fff}
+.note{margin-top:1.5rem;max-width:62ch;opacity:.85}
+/* S6 given */
+.s6 .objs{display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:3rem;align-items:flex-start}
+.o{flex:1 1 200px;max-width:260px;padding:1rem;background:linear-gradient(#fff,#dfe8e2);border:2px solid var(--ink);box-shadow:inset 0 2px 0 #fff,6px 8px 0 var(--ink)}
+.o:nth-child(2){margin-top:3.5rem}.o:nth-child(3){margin-top:1rem}.o:nth-child(4){margin-top:5rem}
+.o svg{width:100%;height:120px}.o h3{font-size:1.7rem;margin-top:.4rem}
+.strip{margin:3rem 0 0 8vw;padding:1.2rem 1.4rem;border-top:6px solid var(--red);max-width:70ch}
+/* S7 minimal */
+.s7{background:#fff;padding-top:10rem;padding-bottom:10rem}
+.s7 h2{font-size:clamp(2rem,4.5vw,3.4rem)}
+.s7 ul{max-width:52ch;margin:2.5rem 0 0 30vw;list-style:none}
+.s7 li{padding:1.2rem 0;border-top:1px solid var(--ink)}
+footer{background:var(--ink);color:#d7e3dc;padding:3rem 6vw 5rem;font-size:15px}
+footer h2{color:var(--mint);font-size:2.4rem;margin-bottom:1rem}footer li{margin:.6rem 0 .6rem 1.2rem}footer a{color:var(--mint)}
+footer .dis{margin-top:1.5rem;padding:1rem;border:2px dashed var(--red)}
+@media(max-width:760px){.s1,.ex{grid-template-columns:1fr}.clip{grid-column:1}.s1 .m{writing-mode:horizontal-tb}.s2 .lead,.s7 ul{margin-left:0}.panel{margin:1rem 0 0}nav{top:auto;bottom:0;flex-direction:row;width:100%}nav a{flex:1;text-align:center}.tag{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}.ecg path{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<nav aria-label="Sections" class="m"><a href="#a1">01</a><a href="#a2">02</a><a href="#a3">03</a><a href="#a5">04</a><a href="#a6">05</a><a href="#a7">06</a></nav>
+
+<header class="hero">
+<svg class="cells" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<g class="im" fill="#7CF2B0" stroke="#12C26B" stroke-width="4"><polygon points="900,120 960,100 1010,150 990,210 930,225 880,180"/><polygon points="130,600 170,570 220,590 230,650 180,680 130,660" opacity=".7"/><polygon points="620,640 690,620 740,670 710,730 640,735 600,690" opacity=".8"/></g>
+<g fill="#E5173F" stroke="#7A0A22" stroke-width="5"><polygon points="1040,430 1075,395 1125,415 1140,470 1100,510 1050,495"/><polygon points="760,330 790,300 830,320 835,365 800,385 765,370" opacity=".85"/></g>
+</svg>
+<div class="bubble"><h1>Immuno&shy;therapy</h1><p>Giving the body's own defenses the strength to fight cancer.</p></div>
+<svg class="ecg" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50H300l20-5 15 5h60l15-40 20 80 15-40h80l20-8 15 8h640" fill="none" stroke="#E5173F" stroke-width="3"/></svg>
+<span class="m tag">FIG. 00 / vital signs</span>
+</header>
+
+<section class="s1" id="a1">
+<span class="m">Summary by the project author</span>
+<div class="clip"><span class="m" style="color:var(--red)">In plain words</span><q>Immunotherapy is when doctors enhance the human immune system by giving drugs that strengthen it so it can kill the cancer.</q></div>
+</section>
+
+<section class="s2" id="a2">
+<h2>How it<br>works</h2>
+<p class="lead">The immune system is the body's defense. It is made of white blood cells plus the organs and tissues of the lymph system. It spots abnormal cells and destroys them, and it likely prevents or slows many cancers. Immune cells found in and around a tumor are called tumor-infiltrating lymphocytes (TILs). They show the body is responding, and people whose tumors contain them often do better. Cancer does not give up easily, though. It fights back with three tactics.</p>
+<svg class="dia" viewBox="0 0 900 340" role="img" aria-label="A green immune cell is blocked from a red cancer cell by a checkpoint brake. Immunotherapy releases the brake.">
+<polygon points="110,110 170,80 230,110 240,180 190,230 120,220 80,170" fill="#7CF2B0" stroke="#12C26B" stroke-width="5"/><text x="95" y="160" class="m" fill="#0A0F0D" font-family="IBM Plex Mono" font-size="14" font-weight="600">T CELL</text>
+<polygon points="650,100 720,70 790,110 800,190 740,245 670,230 630,165" fill="#E5173F" stroke="#7A0A22" stroke-width="6"/><text x="672" y="165" fill="#fff" font-family="IBM Plex Mono" font-size="14" font-weight="600">CANCER</text>
+<rect x="400" y="90" width="26" height="140" fill="#fff"/><text x="372" y="260" fill="#fff" font-family="IBM Plex Mono" font-size="13">CHECKPOINT = BRAKE ON</text>
+<path d="M240 160H395" stroke="#7CF2B0" stroke-width="5" stroke-dasharray="14 10"/>
+<path d="M426 160H640" stroke="#7CF2B0" stroke-width="5" stroke-dasharray="14 10" opacity=".25"/>
+<text x="40" y="310" fill="#7CF2B0" font-family="IBM Plex Mono" font-size="14">IMMUNOTHERAPY: DRUG BLOCKS THE BRAKE SIGNAL, THE T CELL ATTACKS.</text>
+</svg>
+<div class="evade">
+<div><span class="m">Tactic 1</span><p>Cancer hides. Genetic changes make cancer cells harder for the immune system to see.</p></div>
+<div><span class="m">Tactic 2</span><p>Cancer shuts the immune system off. Proteins on the cancer cell surface switch immune cells off.</p></div>
+<div><span class="m">Tactic 3</span><p>Cancer corrupts its surroundings. It changes the normal cells around the tumor so they interfere with the immune response.</p></div>
+</div>
+<span class="m src">Source: National Cancer Institute</span>
+</section>
+
+<section id="a3">
+<h2>Five types</h2>
+<div class="types">
+<div class="t t1"><span class="m">Type A</span><h3>Immune checkpoint inhibitors</h3><p>A checkpoint is a brake. The immune system uses checkpoints so its response never gets too strong. These drugs block the brake. Immune cells can then hit the cancer harder.</p></div>
+<div class="t t2"><span class="m">Type B</span><h3>T-cell transfer therapy</h3><p>Also called adoptive cell therapy. Doctors take immune cells from the tumor and pick the ones most active against the cancer. They are modified in the lab, grown in large batches, and given back through a vein.</p></div>
+<div class="t t3"><span class="m">Type C</span><h3>Monoclonal antibodies</h3><p>These are lab-made immune proteins built to latch onto specific targets on cancer cells. Some of them mark the cancer cells, so the immune system can see and destroy them.</p></div>
+<div class="t t4"><span class="m">Type D</span><h3>Treatment vaccines</h3><p>These vaccines do not prevent disease. They boost the immune system's response to cancer cells that are already there.</p></div>
+<div class="t t5"><span class="m">Type E</span><h3>Immune system modulators</h3><p>These strengthen the body's immune response against cancer. Some target specific parts of the immune system, and others work more generally.</p></div>
+</div>
+<span class="m src">Source: National Cancer Institute</span>
+</section>
+
+<section class="s5" id="a5">
+<h2>By cancer type</h2>
+<p class="m" style="margin-top:1rem"><i style="display:inline-block;width:12px;height:12px;background:var(--green)"></i> widely used &nbsp; <i style="display:inline-block;width:12px;height:12px;background:linear-gradient(90deg,var(--green) 50%,var(--red) 50%)"></i> select subtypes / biomarker-dependent &nbsp; <i style="display:inline-block;width:12px;height:12px;background:var(--red)"></i> mostly in trials</p>
+<div class="ex"><div class="list" id="list" role="list"></div>
+<div class="panel" aria-live="polite"><h3 id="pn"></h3><span class="m badge" id="pb"></span><p id="pt"></p></div></div>
+<p class="note">Not every cancer or subtype is listed. Many have options, especially when specific biomarkers are present. Clinical trials are often the way to get treatments that are not approved yet. The three status groups are my own simplification of the source, not its labels.</p>
+<span class="m src" style="background:var(--mint);color:var(--ink)">Source: Cancer Research Institute, Immunotherapy by Cancer Type</span>
+</section>
+
+<section class="s6" id="a6">
+<h2>How it's given</h2>
+<div class="objs">
+<div class="o"><svg viewBox="0 0 120 120" aria-hidden="true"><polygon points="30,10 90,10 100,30 100,95 20,95 20,30" fill="#cdf5df" stroke="#0A0F0D" stroke-width="3"/><rect x="26" y="52" width="68" height="40" fill="#12C26B"/><rect x="56" y="95" width="8" height="20" fill="#0A0F0D"/><polygon points="32,16 44,16 38,40" fill="#fff" opacity=".8"/></svg><h3>Intravenous</h3><p>Straight into a vein.</p></div>
+<div class="o"><svg viewBox="0 0 120 120" aria-hidden="true"><polygon points="15,50 60,50 60,80 15,80" fill="#E5173F" stroke="#0A0F0D" stroke-width="3"/><polygon points="60,50 105,50 105,80 60,80" fill="#fff" stroke="#0A0F0D" stroke-width="3"/><rect x="20" y="54" width="36" height="6" fill="#fff" opacity=".6"/></svg><h3>Oral</h3><p>Pills or capsules you swallow.</p></div>
+<div class="o"><svg viewBox="0 0 120 120" aria-hidden="true"><polygon points="35,15 85,15 90,30 30,30" fill="#0A0F0D"/><polygon points="30,30 90,30 80,105 40,105" fill="#7CF2B0" stroke="#0A0F0D" stroke-width="3"/><rect x="48" y="50" width="24" height="24" fill="#E5173F"/></svg><h3>Topical</h3><p>A cream rubbed on the skin. It is used for very early skin cancer.</p></div>
+<div class="o"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="20" y="52" width="60" height="18" fill="#cdf5df" stroke="#0A0F0D" stroke-width="3"/><rect x="40" y="56" width="30" height="10" fill="#12C26B"/><rect x="8" y="58" width="12" height="6" fill="#0A0F0D"/><rect x="80" y="59" width="30" height="4" fill="#0A0F0D"/><rect x="14" y="42" width="6" height="26" fill="#0A0F0D"/></svg><h3>Intravesical</h3><p>Delivered directly into the bladder.</p></div>
+</div>
+<p class="strip"><b>Where:</b> a doctor's office, clinic or hospital outpatient unit. There is no overnight stay. <b>How often:</b> every day, week or month. It depends on the cancer type and stage, the immunotherapy, and how the body reacts. Some treatments come in cycles, a treatment period and then a rest period. The rest lets the body recover, respond and build new healthy cells.</p>
+<span class="m src">Source: National Cancer Institute</span>
+</section>
+
+<section class="s7" id="a7">
+<h2>Side effects and monitoring</h2>
+<ul>
+<li>Side effects happen because a revved-up immune system also attacks healthy cells and tissues.</li>
+<li>Doctors do not guess. They track progress with frequent visits, physical exams, questions about how you feel, blood tests and scans that measure the tumor.</li>
+<li>Side effects depend more on the type of immunotherapy than on the cancer type. If you notice side effects or unusual symptoms, tell your health care team right away.</li>
+</ul>
+<span class="m src" style="margin-left:30vw">Sources: NCI and Cancer Research Institute</span>
+</section>
+
+<footer>
+<h2>Sources</h2>
+<ol>
+<li>National Cancer Institute. "Immunotherapy to Treat Cancer." <a href="https://www.cancer.gov/about-cancer/treatment/types/immunotherapy" target="_blank" rel="noopener">cancer.gov/about-cancer/treatment/types/immunotherapy</a> (updated Sept 24, 2019).</li>
+<li>Cancer Research Institute. "Immunotherapy for Your Cancer Type." <a href="https://www.cancerresearch.org/immunotherapy-by-cancer-type" target="_blank" rel="noopener">cancerresearch.org/immunotherapy-by-cancer-type</a>.</li>
+</ol>
+<p>Content adapted and paraphrased from the sources above. "Immunotherapy to Treat Cancer" was originally published by the National Cancer Institute. The plain-words summary was written by the project author.</p>
+<p class="dis">Educational infographic only. It is not medical advice. Talk with your health care team about whether immunotherapy is right for you. Results vary from patient to patient.</p>
+</footer>
+
+<script>
+const D=[
+["Bladder","W","Commonly treated. Checkpoint inhibitors are standard in advanced or metastatic stages, and some early-stage cases get BCG, one of the earliest immunotherapies."],
+["Brain and CNS","T","Including glioblastoma. Hard to treat because of the brain's unique environment. Immunotherapies are actively studied in clinical trials."],
+["Breast","S","Certain subtypes, especially triple-negative. For metastatic disease, checkpoint inhibitors are typically used when tumors express PD-L1."],
+["Cervical","S","Checkpoint inhibitors for recurrent, persistent or metastatic disease, especially PD-L1-expressing tumors, alone or with chemotherapy and targeted therapy."],
+["Childhood cancers","S","Some leukemias, lymphomas and solid tumors with specific biomarkers respond well. CAR T-cell therapy is approved for some pediatric leukemias."],
+["Colorectal","S","Tumors with DNA-repair-related biomarkers often respond well to checkpoint inhibitors. Trials are testing other, historically less responsive subtypes."],
+["Esophageal","S","Checkpoint inhibitors in advanced stages and sometimes before or after surgery. Combinations are being studied."],
+["Head and neck","W","Including HPV-linked cancers. Checkpoint inhibitors for recurrent or metastatic disease, sometimes with chemotherapy."],
+["Kidney","W","Often benefits from checkpoint inhibitors, alone or with targeted therapies. Trials are testing new combinations."],
+["Leukemia","S","Acute lymphocytic leukemia and certain B-cell leukemias respond well. CAR T-cell therapy is an option when the cancer returned or did not respond to other treatment."],
+["Liver","W","Commonly treated in advanced stages with combinations, such as checkpoint inhibitors plus targeted therapy. Biomarker research continues."],
+["Lung","W","Non-small cell and some small cell types. Depending on biomarkers like PD-L1, checkpoint inhibitors are used alone or with chemotherapy."],
+["Lymphoma","W","Classic Hodgkin and some non-Hodgkin subtypes often respond to checkpoint inhibitors and adoptive cell therapies. CAR T is approved for several subtypes."],
+["Melanoma","W","Highly responsive. Checkpoint inhibitors have significantly improved survival for many patients."],
+["Multiple myeloma","S","Bispecific antibodies and CAR T-cell therapies, used at different points of care depending on progression."],
+["Ovarian","S","Recurrent, platinum-resistant disease. Some patients benefit, and research continues to improve response."],
+["Pancreatic","T","Tumors with DNA-repair-related biomarkers respond well, but that is a small percentage of patients. Trials are exploring combinations."],
+["Prostate","S","May respond to checkpoint inhibitors in advanced stages, especially with DNA-repair-related biomarkers or high tumor mutational burden."],
+["Sarcoma","T","More than 70 subtypes. Some benefit from checkpoint inhibitors or adoptive cell therapies. Studies focus on who responds."],
+["Skin (non-melanoma)","S","Advanced basal and squamous cell carcinomas, when surgery or radiation alone is not enough."],
+["Stomach and GEJ","S","Advanced stages, particularly with PD-L1 expression or DNA-repair-related biomarkers."],
+["Uterine (endometrial)","W","Often treated in advanced or recurrent settings, especially with DNA-repair-related biomarkers, alone or with targeted therapy."]];
+const L={W:"Widely used",S:"Select subtypes / biomarker-dependent",T:"Mostly in clinical trials"};
+const C={W:"#12C26B",S:"#7CF2B0",T:"#E5173F"};
+const list=document.getElementById("list");
+function pick(i){const d=D[i];pn.textContent=d[0];pb.textContent=L[d[1]];pb.style.background=d[1]=="T"?C.T:d[1]=="W"?"#0b7a42":"#7A0A22";pt.textContent=d[2];
+[...list.children].forEach((b,j)=>b.setAttribute("aria-pressed",j==i))}
+D.forEach((d,i)=>{const b=document.createElement("button");b.innerHTML=d[0]+'<i class="'+d[1]+'"></i>';b.onclick=()=>pick(i);b.onmouseenter=()=>pick(i);list.appendChild(b)});
+pick(13);
+</script>
+</body>
+</html>
